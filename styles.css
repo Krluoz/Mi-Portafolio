@@ -345,6 +345,7 @@ body.dark-theme .brand-icon {
 }
 
 .hero h1 span {
+  padding-left: 140px;
   display: block;
 
   background: linear-gradient(90deg, #0071e3, #5e5ce6);
@@ -438,10 +439,6 @@ body.dark-theme .brand-icon {
   transform: translateY(-3px);
 }
 
-/* =========================================
-   GAFETE
-========================================= */
-
 .profile-area {
   position: relative;
 
@@ -453,10 +450,6 @@ body.dark-theme .brand-icon {
   padding-top: 5px;
 }
 
-/*
-  lanyard mantiene dimensiones fijas.
-  Así la tarjeta NO se comprime ni se adelgaza.
-*/
 .lanyard {
   position: relative;
 
@@ -467,14 +460,12 @@ body.dark-theme .brand-icon {
   outline: none;
 }
 
-/* Contorno al navegar con Tab */
 .lanyard:focus-visible {
   outline: 4px solid rgba(0, 113, 227, 0.35);
   outline-offset: 10px;
   border-radius: 28px;
 }
 
-/* Punto superior */
 .lanyard-pin {
   position: absolute;
   z-index: 10;
@@ -508,10 +499,6 @@ body.dark-theme .brand-icon {
   transform: translateX(-50%);
 }
 
-/*
-  Esta capa se mueve al hacer clic.
-  El origen arriba logra el efecto de péndulo.
-*/
 .lanyard-swing {
   position: absolute;
   top: 14px;
@@ -524,12 +511,10 @@ body.dark-theme .brand-icon {
   transform-origin: 50% 0%;
 }
 
-/* Se agrega desde JavaScript al hacer clic */
 .lanyard-swing.is-swinging {
   animation: pendulum-on-click 1.9s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-/* Cordón */
 .lanyard-cord {
   position: absolute;
   top: 0;
@@ -552,7 +537,6 @@ body.dark-theme .brand-icon {
   transform: translateX(-50%);
 }
 
-/* Pieza de unión */
 .lanyard-hook {
   position: absolute;
   z-index: 3;
@@ -571,10 +555,6 @@ body.dark-theme .brand-icon {
   transform: translateX(-50%);
 }
 
-/*
-  La tarjeta tiene ancho y mínimo fijo.
-  Esto evita que se vuelva delgada.
-*/
 .profile-card {
   position: absolute;
   top: 138px;
@@ -1066,6 +1046,7 @@ body.dark-theme .contact-card {
 }
 
 .reveal {
+  padding-left: 28px;
   opacity: 0;
   transform: translateY(26px);
   transition: opacity 0.7s ease, transform 0.7s ease;
@@ -1241,4 +1222,10 @@ body.dark-theme .contact-card {
     transform: none;
     transition: none;
   }
+}
+
+#imageP{
+  border-radius: 23px;
+  width: 516px;
+  height: 490px;
 }
