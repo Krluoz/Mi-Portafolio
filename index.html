@@ -1,30 +1,328 @@
 <!DOCTYPE html>
-<html>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio</title>
-    <link href="styles.css" rel="stylesheet" type="text/css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-</html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio personal de desarrollo web">
+  <title>Portafolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand fw-bold" href="#">Portafolio</a>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Acerca de</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Proyectos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contactos</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+  <div class="code-background" id="codeBackground" aria-hidden="true"></div>
+
+  <header class="header">
+    <a class="brand" href="#inicio" aria-label="Ir al inicio">
+      <span class="brand-icon">CA</span>
+
+      <span class="brand-text">
+        <strong>Carlos Alfredo</strong>
+        <small>PORTAFOLIO</small>
+      </span>
+    </a>
+
+    <nav class="navigation" id="navigation">
+      <a href="#inicio">Inicio</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
     </nav>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>   
+    <div class="header-actions">
+      <button
+        class="theme-button"
+        id="themeButton"
+        type="button"
+        aria-label="Cambiar tema"
+        title="Cambiar tema"
+      >
+        ◐
+      </button>
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero section" id="inicio">
+
+      <div class="hero-content reveal">
+        <p class="availability">
+          <span></span>
+          Disponible para colaborar
+        </p>
+
+        <p class="hello">Hola, Yo soy</p>
+
+        <h1>
+          Carlos <span>Alfredo</span>
+        </h1>
+
+        <p class="hero-description">
+          Desarrollador web enfocado en construir experiencias digitales
+          modernas, responsivas y fáciles de usar.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="button button-primary" href="#proyectos">
+            Ver proyectos
+            <span>→</span>
+          </a>
+
+          <a class="button button-secondary" href="hola" download>
+            Descargar CV
+            <span>↓</span>
+          </a>
+        </div>
+
+        <div class="social-links">
+          <a href="https://github.com/Krluoz" aria-label="GitHub">GH</a>
+          <a href="https://www.linkedin.com/in/carlos-alfredo-f/" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="carlosalfredo.franco.o@gmail.com" aria-label="Enviar correo">
+            ✉
+          </a>
+        </div>
+      </div>
+
+      <div class="profile-area reveal">
+
+        <div
+          class="lanyard"
+          id="lanyard"
+          role="button"
+          tabindex="0"
+          aria-label="Haz clic para mover el gafete"
+          title="Haz clic para mover el gafete"
+        >
+
+          <div class="lanyard-pin"></div>
+  
+          <div class="lanyard-swing">
+
+            <div class="lanyard-cord"></div>
+            <div class="lanyard-hook"></div>
+
+            <article class="profile-card">
+
+              <div class="card-banner"></div>
+
+              <div class="profile-image-wrapper">
+                <img
+                  src="image/Captura de pantalla 2026-09-01 235611.png"
+                  onerror="this.style.display='none'; this.parentElement.classList.add('no-image');"
+                >
+
+                <span class="image-fallback">TN</span>
+              </div>
+
+              <div class="card-content">
+                <h2>Carlos Alfredo</h2>
+
+                <p class="profile-role">
+                  Desarrollador FullStack
+                </p>
+
+                <div class="profile-divider"></div>
+
+                <div class="profile-data">
+                  <div>
+                    <small>ESPECIALIDAD</small>
+                    <strong>FullStack Java</strong>
+                  </div>
+
+                  <div>
+                    <small>UBICACIÓN</small>
+                    <strong>Toluca, México</strong>
+                  </div>
+
+                  <div>
+                    <small>TECNOLOGÍAS</small>
+                    <strong>HTML, CSS, JS, MySQL</strong>
+                  </div>
+
+                  <div>
+                    <small>ESTADO</small>
+                    <strong class="active-status">
+                      <span></span>
+                      Disponible
+                    </strong>
+                  </div>
+                </div>
+
+                <div class="barcode" aria-hidden="true">
+                  <i></i><i></i><i></i><i></i><i></i>
+                  <i></i><i></i><i></i><i></i><i></i>
+                  <i></i><i></i><i></i><i></i><i></i>
+                </div>
+
+                <div class="card-footer">
+                  <span>DEV-2026-PORT</span>
+                  <span>PORTFOLIO ID</span>
+                  <p class="card-hint">
+                    Haz clic en el gafete para moverlo
+                  </p>
+                </div>
+                <p class="card-hint">
+                    
+                  </p>
+              </div>
+
+            </article>
+          </div>
+        </div>
+
+        
+      </div>
+    </section>
+
+    <section class="section" id="sobre-mi">
+      <div class="section-heading reveal">
+        <span class="section-number">01</span>
+
+        <div>
+          <p class="eyebrow">Sobre mí</p>
+          <h2>Diseño y desarrollo con intención.</h2>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            Me gusta convertir ideas en sitios web claros, funcionales y
+            visualmente atractivos. Trabajo principalmente con HTML, CSS y
+            JavaScript para crear interfaces adaptables.
+          </p>
+
+          <p>
+            Busco seguir aprendiendo, mejorar mis habilidades y construir
+            soluciones digitales que sean agradables de utilizar.
+          </p>
+        </div>
+
+        <article class="glass-card skills-card reveal" id="habilidades">
+          <h3>Herramientas que utilizo</h3>
+
+          <div class="skills">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+            <span>Bootstrap</span>
+            <span>Python</span>
+            <span>MySQL</span>
+            <span>Responsive Design</span>
+            <span>Git</span>
+            <span>GitHub</span>
+            <span>Figma</span>
+            <span>Jira</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section class="section" id="proyectos">
+      <div class="section-heading reveal">
+        <span class="section-number">02</span>
+
+        <div>
+          <p class="eyebrow">Portafolio</p>
+          <h2>Proyectos seleccionados.</h2>
+        </div>
+      </div>
+
+      <div class="projects-grid">
+
+        <article class="project-card project-blue reveal">
+          <div class="project-content">
+            <span class="project-type">01 / Sitio Web</span>
+
+            <h3>Catálogo Digital</h3>
+
+            <p>
+              Catálogo responsivo con navegación clara y diseño adaptable
+              para celular, tablet y escritorio.
+            </p>
+
+            <a class="project-link" href="#">
+              Ver proyecto →
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card project-purple reveal">
+          <div class="project-content">
+            <span class="project-type">02 / JavaScript</span>
+
+            <h3>Lista de Tareas</h3>
+
+            <p>
+              Aplicación para agregar, completar y eliminar tareas usando
+              JavaScript.
+            </p>
+
+            <a class="project-link" href="#">
+              Ver proyecto →
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card project-orange reveal">
+          <div class="project-content">
+            <span class="project-type">03 / UI Design</span>
+
+            <h3>Panel Administrativo</h3>
+
+            <p>
+              Interfaz de administración para organizar usuarios,
+              productos y estadísticas.
+            </p>
+
+            <a class="project-link" href="#">
+              Ver proyecto →
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="section" id="contacto">
+      <div class="contact-card reveal">
+        <p class="eyebrow">Contacto</p>
+
+        <h2>Construyamos algo increíble.</h2>
+
+        <p>
+          Si tienes un proyecto, una práctica o una idea para una página web,
+          puedes escribirme y platicamos.
+        </p>
+
+        <a class="button button-primary" href="mailto:correo@ejemplo.com">
+          Enviar correo
+          <span>→</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Tu Nombre. Hecho con HTML, CSS y JavaScript.</p>
+
+    <a href="#inicio">Volver arriba ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
+</html>
