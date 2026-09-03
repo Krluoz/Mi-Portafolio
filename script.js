@@ -2,10 +2,17 @@ const themeButton = document.querySelector("#themeButton");
 const menuButton = document.querySelector("#menuButton");
 const navigation = document.querySelector("#navigation");
 const navigationLinks = document.querySelectorAll(".navigation a");
-const revealElements = document.querySelectorAll(".reveal");
+
 const lanyard = document.querySelector("#lanyard");
 const lanyardSwing = document.querySelector(".lanyard-swing");
+
 const codeBackground = document.querySelector("#codeBackground");
+const revealElements = document.querySelectorAll(".reveal");
+
+/* ========================================
+   MODO CLARO / OSCURO
+======================================== */
+
 const savedTheme = localStorage.getItem("portfolio-theme");
 
 if (savedTheme === "dark") {
@@ -26,6 +33,9 @@ themeButton.addEventListener("click", () => {
   );
 });
 
+/* ========================================
+   MENÚ RESPONSIVE
+======================================== */
 
 menuButton.addEventListener("click", () => {
   navigation.classList.toggle("active");
@@ -33,7 +43,7 @@ menuButton.addEventListener("click", () => {
   const menuIsOpen = navigation.classList.contains("active");
 
   menuButton.textContent = menuIsOpen ? "×" : "☰";
-  menuButton.setAttribute("aria-expanded", menuIsOpen);
+  menuButton.setAttribute("aria-expanded", String(menuIsOpen));
 });
 
 navigationLinks.forEach((link) => {
@@ -44,46 +54,52 @@ navigationLinks.forEach((link) => {
   });
 });
 
+/* ========================================
+   GAFETE: PÉNDULO AL HACER CLIC
+======================================== */
 
-function moveLanyard() {
-
+function moveBadge() {
   lanyardSwing.classList.remove("is-swinging");
 
-
+  /*
+    Fuerza un reflow para reiniciar la animación
+    incluso cuando se hace clic varias veces seguidas.
+  */
   void lanyardSwing.offsetWidth;
 
   lanyardSwing.classList.add("is-swinging");
 }
 
-lanyard.addEventListener("click", moveLanyard);
+lanyard.addEventListener("click", moveBadge);
 
 lanyard.addEventListener("keydown", (event) => {
-  const isEnterKey = event.key === "Enter";
-  const isSpaceKey = event.key === " ";
+  const isEnter = event.key === "Enter";
+  const isSpace = event.key === " ";
 
-  if (!isEnterKey && !isSpaceKey) {
+  if (!isEnter && !isSpace) {
     return;
   }
 
   event.preventDefault();
-  moveLanyard();
+  moveBadge();
 });
 
-
+/* ========================================
+   FONDO </> DISTRIBUIDO
+======================================== */
 
 function createCodeBackground() {
   const isMobile = window.innerWidth < 600;
-  const numberOfSymbols = isMobile ? 25 : 62;
+  const totalSymbols = isMobile ? 22 : 55;
 
   codeBackground.innerHTML = "";
 
-  for (let index = 0; index < numberOfSymbols; index += 1) {
+  for (let index = 0; index < totalSymbols; index += 1) {
     const symbol = document.createElement("span");
 
-    symbol.classList.add("code-symbol");
+    symbol.className = "code-symbol";
     symbol.textContent = "</>";
 
-    
     symbol.style.left = `${Math.random() * 96}%`;
     symbol.style.top = `${Math.random() * 98}%`;
 
@@ -100,10 +116,12 @@ window.addEventListener("resize", () => {
 
   resizeTimer = setTimeout(() => {
     createCodeBackground();
-  }, 200);
+  }, 250);
 });
 
-
+/* ========================================
+   REVEAL AL HACER SCROLL
+======================================== */
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
